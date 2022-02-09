@@ -10,6 +10,8 @@ ___
 
 *** **NOTE** :heavy_exclamation_mark: ***
 
+Please beware that you will lose all of your deposited crypto for that round if you don't predict the correct direction of the market.
+
 
 ___
 
