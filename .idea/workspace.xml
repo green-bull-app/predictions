@@ -7,6 +7,7 @@
     <list default="true" id="a7b41dea-505f-4026-af50-e152bca29fcc" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/contracts/Predictions.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/Greeter.sol" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -45,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644431525932</updated>
       <workItem from="1644431528386" duration="10000" />
-      <workItem from="1644431665560" duration="1208000" />
+      <workItem from="1644431665560" duration="1537000" />
     </task>
     <servers />
   </component>
