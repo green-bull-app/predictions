@@ -1,21 +1,30 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// When running the script with `npx hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
 const hre = require("hardhat");
+const axios = require("axios");
 
-async function main() {
-  const Greeter = await hre.ethers.getContractFactory("Predictions");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+const usdtContractAddress = process.env.BASE_TOKEN_ADDRESS;
+const priceUrl = process.env.PRICE_URL;
 
-  await greeter.deployed();
-
-  console.log("Greeter deployed to:", greeter.address);
+const getBtcPrice = async () => {
+    const priceRequest = await axios.get(priceUrl);
+    const {data} = priceRequest;
+    return data;
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+async function main() {
+  const Predictions = await hre.ethers.getContractFactory("Predictions");
+  const {price} = await getBtcPrice();
+  const bigPrice = price.split('.')[0] + price.split('.')[1];
+
+    console.log('Deploying contract');
+    const predictions = await Predictions.deploy(bigPrice, usdtContractAddress);
+
+    console.log('Submitting transaction');
+    await predictions.deployed();
+
+    console.log(`Predictions Contract Address: ${predictions.address}`)
+}
+
+
 main()
   .then(() => process.exit(0))
   .catch((error) => {
