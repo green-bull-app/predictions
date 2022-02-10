@@ -18,4 +18,22 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  networks: {
+    hardhat: {
+      forking: {
+        url: rpc,
+      }
+    },
+    polygon_main: {
+      url: rpc,
+      chainId: 137,
+      accounts: [process.env.TREASURY_PRIVATE_KEY]
+    },
+  },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
+  },
 };
