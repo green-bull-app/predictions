@@ -7,7 +7,7 @@ contract IERC20 {
     string  public symbol = "GBULL";
     string  public standard = "Green Bull v1.0";
     uint256 public totalSupply;
-    uint256 public decimals = 18;
+    uint256 public decimals = 6;
 
     event Transfer(
         address indexed _from,
